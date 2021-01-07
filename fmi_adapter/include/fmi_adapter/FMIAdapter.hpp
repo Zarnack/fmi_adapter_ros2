@@ -229,6 +229,6 @@ private:
   }
 };
 
-} // namespace fmi_adapter
+}  // namespace fmi_adapter
 
-#endif // FMI_ADAPTER__FMIADAPTER_HPP_
+#endif  // FMI_ADAPTER__FMIADAPTER_HPP_
