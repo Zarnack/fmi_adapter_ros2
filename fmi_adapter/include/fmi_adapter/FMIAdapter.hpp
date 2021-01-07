@@ -140,11 +140,11 @@ public:
   /// Returns the current value of the output variable with the given name.
   double getOutputValue(const std::string & variableName) const;
 
-  /// Returns the current value of the given parameter/variable
-  double getParameterValue(fmi2_import_variable_t * variable) const;
+  /// Returns the current value of the given variable
+  double getValue(fmi2_import_variable_t * variable) const;
 
-  /// Returns the current value of the parameter/variable with the given name
-  double getParameterValue(const std::string & variableName) const;
+  /// Returns the current value of the variable with the given name
+  double getValue(const std::string & variableName) const;
 
   /// Sets the given value of the given variable (or parameter or alias) as initial values. This
   /// function may be called only while isInInitializationMode() = true.

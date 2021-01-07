@@ -490,7 +490,7 @@ double FMIAdapter::getOutputValue(const std::string & variableName) const
   return getOutputValue(variable);
 }
 
-double FMIAdapter::getParameterValue(fmi2_import_variable_t * variable) const
+double FMIAdapter::getValue(fmi2_import_variable_t * variable) const
 {
   fmi2_value_reference_t valueReference = fmi2_import_get_variable_vr(variable);
   fmi2_real_t value;
@@ -498,14 +498,14 @@ double FMIAdapter::getParameterValue(fmi2_import_variable_t * variable) const
   return value;
 }
 
-double FMIAdapter::getParameterValue(const std::string & variableName) const
+double FMIAdapter::getValue(const std::string & variableName) const
 {
   fmi2_import_variable_t * variable = fmi2_import_get_variable_by_name(fmu_, variableName.c_str());
   if (variable == nullptr) {
     throw std::invalid_argument("Unknown variable name!");
   }
 
-  return getParameterValue(variable);
+  return getValue(variable);
 }
 
 void FMIAdapter::setInitialValue(fmi2_import_variable_t * variable, double value)
